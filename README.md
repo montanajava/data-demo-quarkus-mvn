@@ -8,7 +8,7 @@ How to reproduce the error:
 
 * Run `mvn clean verify`
 
-I get the following error:
+I get the following error on Linux:
 
 ```text
 [INFO] Running org.example.LibraryTest
