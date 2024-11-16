@@ -3,18 +3,21 @@
 This branch tests the Red Hat version of Quarkus wih Hibernate 6 and jakarta-data.
 Currently, the build is not working with the Red Hat version of Quarkus undr certain circumtances.
 
-| OS-Vs         | JDK-Vs. | Hwd               | Result  |
-|---------------|--|-------------------|---------|
-| 24.04.1 LTS   | 21.0.5-tem | Intel             | Failure |
-| 24.04.1 LTS   | 17.0.13-tem | Intel             | Failure |
-| 24.04.1 LTS   | 21.0.5-tem | Intel VM (Vmware) | Failure |
-| 24.04.1 LTS   | 17.0.13-tem | Intel VM (Vmware) | Failure |
-| Ubuntu 20.04  | OpenJDK 17 | Intel             | Failed  |
-| Fedora 34     | OpenJDK 11 | AMD               | Success |
-| Fedora 34     | OpenJDK 17 | AMD               | Failed  |
+| OS-Vs         | JDK-Vs.       | Hwd               | Result  |
+|---------------|---------------|-------------------|---------|
+| 24.04.1 LTS   | 21.0.5-tem    | Intel             | Failure |
+| 24.04.1 LTS   | 17.0.13-tem   | Intel             | Failure |
+| 22.04.5 LTS   | 17.0.13-tem   | Intel             | Success |
+| 22.04.5 LTS   | 21.0.5-tem    | Intel             | Success |
+| 24.04.1 LTS   | 21.0.5-tem    | Intel VM (Vmware) | Failure |
+| 24.04.1 LTS   | 17.0.13-tem   | Intel VM (Vmware) | Failure |
+| Sonoma 14.6.1 | 21.0.5-tem    | Mac Silicon       | Success |
+| Sonoma 14.6.1 | 17.0.13-tem   | Mac Silicon       | Success |
+| Fedora 34     | OpenJDK 11    | AMD               | Success |
+| Fedora 34     | OpenJDK 17    | AMD               | Failed  |
 | Windows 10    | Oracle JDK 11 | Intel             | Success |
 | Windows 10    | Oracle JDK 17 | Intel             | Failed  |
-| macOS Big Sur | OpenJDK 11 | Apple Silicon     | Success |
+| macOS Big Sur | OpenJDK 11    | Apple Silicon     | Success |
 
 
 How to reproduce the error:
