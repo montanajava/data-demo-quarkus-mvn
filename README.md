@@ -3,28 +3,28 @@
 This branch tests the Red Hat version of Quarkus wih Hibernate 6 and jakarta-data.
 Currently, the build is not working with the Red Hat version of Quarkus undr certain circumtances.
 
-| OS-Vs         | JDK-Vs.       | Hwd               | Result  |
-|---------------|---------------|-------------------|---------|
-| 24.04.1 LTS   | 21.0.5-tem    | Intel             | Failure |
-| 24.04.1 LTS   | 17.0.13-tem   | Intel             | Failure |
-| 22.04.5 LTS   | 17.0.13-tem   | Intel             | Success |
-| 22.04.5 LTS   | 21.0.5-tem    | Intel             | Success |
-| 24.04.1 LTS   | 21.0.5-tem    | Intel VM (Vmware) | Failure |
-| 24.04.1 LTS   | 17.0.13-tem   | Intel VM (Vmware) | Failure |
-| Sonoma 14.6.1 | 21.0.5-tem    | Mac Silicon       | Success |
-| Sonoma 14.6.1 | 17.0.13-tem   | Mac Silicon       | Success |
-| Fedora 34     | OpenJDK 11    | AMD               | Success |
-| Fedora 34     | OpenJDK 17    | AMD               | Failed  |
-| Windows 10    | Oracle JDK 11 | Intel             | Success |
-| Windows 10    | Oracle JDK 17 | Intel             | Failed  |
-| macOS Big Sur | OpenJDK 11    | Apple Silicon     | Success |
-
+| OS-Vs              | JDK-Vs.     | Hwd               | Result  |
+|--------------------|-------------|-------------------|---------|
+| Ubuntu 24.04.1 LTS | 21.0.5-tem  | Intel64           | Failure |
+| Ubuntu 24.04.1 LTS | 17.0.13-tem | Intel64           | Failure |
+| Ubuntu 24.04.1 LTS | 21.0.5-tem  | Intel VM (Vmware) | Failure |
+| Ubuntu 24.04.1 LTS | 17.0.13-tem | Intel VM (Vmware) | Failure |
+| Ubuntu 22.04.5 LTS | 17.0.13-tem | Intel64           | Success |
+| Ubuntu 22.04.5 LTS | 21.0.5-tem  | Intel64           | Success |
+| Ubuntu 23.04       | 17.0.13-tem | Intel (WSL 2)     | Success |
+| Ubuntu 23.04       | 21.0.5-tem  | Intel (WSL 2)     | Sucess  |
+| Win 11 10.0.22631  | 17.0.13-tem | Intel64           | Success |
+| Win 11 10.0.22631  | 21.0.5-tem  | Intel64           | Success |
+| Sonoma 14.6.1      | 17.0.13-tem | Apple Silicon     | Success |
+| Sonoma 14.6.1      | 21.0.5-tem  | Apple Silicon     | Success |
+| Fedora 39          | 17.0.13-tem | ARM (Fusion)      | Success |
+| Fedora 39          | 21.0.5-tem  | ARM (Fusion)      | Success |
 
 How to reproduce the error:
 
 * Run `mvn clean verify`
 
-I get the following error on Linux:
+I get the following error on Ubuntu 24.04.1:
 
 ```text
 [error]: Build step io.quarkus.vertx.http.deployment.VertxHttpProcessor#preinitializeRouter threw an exception: java.lang.RuntimeException: Unable to read io/vertx/mutiny/ext/web/Router.class
