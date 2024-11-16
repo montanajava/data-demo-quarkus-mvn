@@ -9,6 +9,8 @@ Currently, the build is not working with the Red Hat version of Quarkus undr cer
 | Ubuntu 24.04.1 LTS | 17.0.13-tem | Intel64           | Failure |
 | Ubuntu 24.04.1 LTS | 21.0.5-tem  | Intel VM (Vmware) | Failure |
 | Ubuntu 24.04.1 LTS | 17.0.13-tem | Intel VM (Vmware) | Failure |
+| Ubuntu 24.04.1 LTS | 21.0.5-tem  | Intel VM (WSL 2)  | Success |
+| Ubuntu 24.04.1 LTS | 17.0.13-tem | Intel VM (WSL 2)  | Success |
 | Ubuntu 22.04.5 LTS | 17.0.13-tem | Intel64           | Success |
 | Ubuntu 22.04.5 LTS | 21.0.5-tem  | Intel64           | Success |
 | Ubuntu 23.04       | 17.0.13-tem | Intel (WSL 2)     | Success |
@@ -24,7 +26,7 @@ How to reproduce the error:
 
 * Run `mvn clean verify`
 
-I get the following error on Ubuntu 24.04.1:
+I get the following error on Ubuntu 24.04.1 on native hardware and also when running as a VM under VMware.
 
 ```text
 [error]: Build step io.quarkus.vertx.http.deployment.VertxHttpProcessor#preinitializeRouter threw an exception: java.lang.RuntimeException: Unable to read io/vertx/mutiny/ext/web/Router.class
